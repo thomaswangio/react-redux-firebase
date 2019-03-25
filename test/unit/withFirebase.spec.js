@@ -22,7 +22,7 @@ describe('withFirebase', () => {
 
   it('adds dispatch as prop', () => {
     expect(wrapper.prop('dispatch')).to.exist
-    expect(wrapper.prop('dispatch')).to.be.a.function
+    expect(wrapper.prop('dispatch')).to.be.an('function')
   })
 
   describe('sets displayName static as', () => {

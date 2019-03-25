@@ -29,7 +29,7 @@ describe('Actions: Storage', () => {
     })
 
     it('is exported', () => {
-      expect(uploadFileWithProgress).to.be.a.function
+      expect(uploadFileWithProgress).to.be.an('function')
     })
 
     it.skip('runs given basic params', () =>
@@ -38,7 +38,7 @@ describe('Actions: Storage', () => {
         file: { name: 'test.png' }
       }).then(snap => {
         expect(spy).to.have.been.calledOnce
-        expect(snap).to.be.an.object
+        expect(snap).to.be.an('object')
       }))
   })
 
@@ -48,7 +48,7 @@ describe('Actions: Storage', () => {
     })
 
     it('is exported', () => {
-      expect(uploadFile).to.be.a.function
+      expect(uploadFile).to.be.an('function')
     })
 
     it('throws if storage does not exist', async () => {
@@ -91,7 +91,7 @@ describe('Actions: Storage', () => {
         ...defaultFileMeta,
         dbPath: 'projects'
       })
-      expect(res).to.be.an.object
+      expect(res).to.be.an('object')
     })
 
     it('calls database.push', async () => {
@@ -269,7 +269,7 @@ describe('Actions: Storage', () => {
 
   describe('uploadFiles', () => {
     it('is exported', () => {
-      expect(uploadFiles).to.be.a.function
+      expect(uploadFiles).to.be.an('function')
     })
 
     it('runs given basic params', () =>
@@ -277,13 +277,13 @@ describe('Actions: Storage', () => {
         path: 'projects',
         file: { name: 'test.png' }
       }).then(snap => {
-        expect(snap).to.be.an.object
+        expect(snap).to.be.an('object')
       }))
   })
 
   describe('deleteFile', () => {
     it('is exported', () => {
-      expect(deleteFile).to.be.a.function
+      expect(deleteFile).to.be.an('function')
     })
 
     it('runs given path', () =>

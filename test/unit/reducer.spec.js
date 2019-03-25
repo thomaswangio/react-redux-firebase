@@ -44,7 +44,7 @@ const profile = { email: 'test@test.com' }
 
 describe('reducer', () => {
   it('is a function', () => {
-    expect(firebaseReducer).to.be.a.function
+    expect(firebaseReducer).to.be.an('function')
   })
 
   describe('throws for invalid initial state', () => {

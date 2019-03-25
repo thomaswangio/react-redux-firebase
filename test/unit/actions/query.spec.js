@@ -16,7 +16,7 @@ describe('Actions: Query', () => {
 
   describe('watchEvent', () => {
     it('is exported', () => {
-      expect(watchEvent).to.be.a.function
+      expect(watchEvent).to.be.an('function')
     })
 
     it('throws if Firebase database has not been included', () => {
@@ -95,19 +95,19 @@ describe('Actions: Query', () => {
 
   describe('unWatchEvent', () => {
     it('is exported', () => {
-      expect(unWatchEvent).to.be.a.function
+      expect(unWatchEvent).to.be.an('function')
     })
 
     it('runs given basic params', () => {
       expect(
         unWatchEvent(firebase, dispatch, { type: 'once', path: 'projects' })
-      ).to.be.a.function
+      ).to.be.an('function')
     })
   })
 
   describe('watchEvents', () => {
     it('is exported', () => {
-      expect(watchEvents).to.be.a.function
+      expect(watchEvents).to.be.an('function')
     })
 
     it('runs given basic params', () => {
@@ -126,7 +126,7 @@ describe('Actions: Query', () => {
 
   describe('unWatchEvents', () => {
     it('is exported', () => {
-      expect(unWatchEvents).to.be.a.function
+      expect(unWatchEvents).to.be.an('function')
     })
 
     it('runs given basic params', () => {

@@ -16,7 +16,7 @@ describe('module', () => {
     })
     it('helpers', () => {
       expect(src).to.have.property('helpers')
-      expect(src.helpers).to.be.an.object
+      expect(src.helpers).to.be.an('object')
     })
   })
 })

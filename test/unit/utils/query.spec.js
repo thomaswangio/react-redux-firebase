@@ -97,7 +97,7 @@ describe('Utils: Query', () => {
 
   describe('applyParamsToQuery', () => {
     it('orderByValue', () => {
-      expect(createQueryFromParams(['orderByValue=uid'])).to.be.an.object
+      expect(createQueryFromParams(['orderByValue=uid'])).to.be.an('object')
     })
 
     describe('orderByPriority', () => {
@@ -121,7 +121,7 @@ describe('Utils: Query', () => {
     })
 
     it('orderByKey', () => {
-      expect(createQueryFromParams(['orderByKey'])).to.be.an.object
+      expect(createQueryFromParams(['orderByKey'])).to.be.an('object')
     })
 
     describe('orderByChild', () => {
@@ -196,19 +196,19 @@ describe('Utils: Query', () => {
     })
 
     it('limitToFirst', () => {
-      expect(createQueryFromParams(['limitToFirst=1'])).to.be.an.object
+      expect(createQueryFromParams(['limitToFirst=1'])).to.be.an('object')
     })
     it('limitToLast', () => {
-      expect(createQueryFromParams(['limitToLast=1'])).to.be.an.object
+      expect(createQueryFromParams(['limitToLast=1'])).to.be.an('object')
     })
     it('equalTo', () => {
-      expect(createQueryFromParams(['equalTo=uid'])).to.be.an.object
+      expect(createQueryFromParams(['equalTo=uid'])).to.be.an('object')
     })
     it('startAt', () => {
-      expect(createQueryFromParams(['startAt=uid'])).to.be.an.object
+      expect(createQueryFromParams(['startAt=uid'])).to.be.an('object')
     })
     it('endAt', () => {
-      expect(createQueryFromParams(['endAt=uid'])).to.be.an.object
+      expect(createQueryFromParams(['endAt=uid'])).to.be.an('object')
     })
   })
 
@@ -251,7 +251,7 @@ describe('Utils: Query', () => {
         populateAndDispatch(firebase, () => ({}), {
           snapshot: { key: 'test123' }
         })
-      ).to.be.an.object
+      ).to.be.an('object')
     })
 
     // // TODO: Get this working

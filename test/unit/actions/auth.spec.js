@@ -196,21 +196,21 @@ describe('Actions: Auth -', () => {
 
     it('sets profile watch function', () => {
       watchUserProfile(dispatch, firebase)
-      expect(firebase._.profileWatch).to.be.a.function
+      expect(firebase._.profileWatch).to.be.an('function')
     })
 
     describe('populates -', () => {
       it('skips populating data into profile by default', () => {
         firebase._.config.profileParamsToPopulate = 'role:roles'
         watchUserProfile(dispatch, firebase)
-        expect(firebase._.profileWatch).to.be.a.function
+        expect(firebase._.profileWatch).to.be.an('function')
       })
 
       it('sets populates to profile autoPopulateProfile is true', () => {
         firebase._.config.profileParamsToPopulate = 'role:roles'
         firebase._.config.autoPopulateProfile = true
         watchUserProfile(functionSpy, firebase)
-        expect(firebase._.profileWatch).to.be.a.function
+        expect(firebase._.profileWatch).to.be.an('function')
         // TODO: Find a better way to confirm population is happening other than that dispatch is not being called
         expect(functionSpy).to.have.callCount(0)
       })
@@ -243,7 +243,7 @@ describe('Actions: Auth -', () => {
       const profile = await createUserProfile(dispatch, Firebase, userData, {
         some: 'asdf'
       })
-      expect(profile).to.be.an.object
+      expect(profile).to.be.an('object')
     })
 
     it('resolves with userData if userProfile config option is not enabled', async () => {
@@ -367,12 +367,12 @@ describe('Actions: Auth -', () => {
   describe('createUser', () => {
     it('creates user', async () => {
       res = await createUser(dispatch, fakeFirebase, fakeLogin, fakeLogin)
-      expect(res).to.be.an.object
+      expect(res).to.be.an('object')
     })
 
     it('creates user without profile', async () => {
       res = await createUser(dispatch, fakeFirebase, fakeLogin)
-      expect(res).to.be.an.object
+      expect(res).to.be.an('object')
     })
 
     it('handles no email', async () => {
@@ -381,7 +381,7 @@ describe('Actions: Auth -', () => {
           password: fakeLogin.password
         })
       } catch (err) {
-        expect(err).to.be.an.object
+        expect(err).to.be.an('object')
       }
     })
 
@@ -389,7 +389,7 @@ describe('Actions: Auth -', () => {
       try {
         await createUser(dispatch, fakeFirebase, { email: fakeLogin.email })
       } catch (err) {
-        expect(err).to.be.an.object
+        expect(err).to.be.an('object')
       }
     })
 
@@ -400,7 +400,7 @@ describe('Actions: Auth -', () => {
           password: 'error'
         })
       } catch (err) {
-        expect(err).to.be.an.object
+        expect(err).to.be.an('object')
       }
     })
 
@@ -411,7 +411,7 @@ describe('Actions: Auth -', () => {
           password: 'error2'
         })
       } catch (err) {
-        expect(err).to.be.an.object
+        expect(err).to.be.an('object')
       }
     })
 
@@ -582,7 +582,7 @@ describe('Actions: Auth -', () => {
       const profileUpdate = { some: 'value' }
       const res = await updateProfile(dispatch, firebaseStub, profileUpdate)
       expect(res).to.have.property('val')
-      expect(res.val).to.be.a.function
+      expect(res.val).to.be.an('function')
       expect(res.val()).to.have.property('some', profileUpdate.some)
       expect(res.val()).to.have.property('existing', existingProfile.existing)
     })
@@ -604,7 +604,7 @@ describe('Actions: Auth -', () => {
         payload: { ...profileUpdate, ...existingProfile }
       })
       expect(res).to.have.property('data')
-      expect(res.data).to.be.a.function
+      expect(res.data).to.be.an('function')
       expect(res.data()).to.have.property('some', profileUpdate.some)
       expect(res.data()).to.have.property('existing', existingProfile.existing)
     })

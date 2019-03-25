@@ -21,11 +21,11 @@ let path
 
 describe('enhancer', () => {
   it('is a function', () => {
-    expect(enhancer).to.be.a.function
+    expect(enhancer).to.be.an('function')
   })
 
   it('returns an function', () => {
-    expect(enhancer(Firebase)).to.be.a.function
+    expect(enhancer(Firebase)).to.be.an('function')
   })
 
   it('throws for first argument not being a valid Firebase library instance', () => {
@@ -52,17 +52,17 @@ describe('enhancer', () => {
       { attachAuthIsReady: true }
     )(() => ({}))()
     expect(store).to.have.property('firebaseAuthIsReady')
-    expect(store.firebaseAuthIsReady).to.be.a.function
+    expect(store.firebaseAuthIsReady).to.be.an('function')
   })
 
   describe('helpers', () => {
     describe('ref', () => {
       it('exists', () => {
-        expect(store.firebase.ref('test')).to.be.an.object
+        expect(store.firebase.ref('test')).to.be.an('object')
       })
 
       it('has child', () => {
-        expect(store.firebase.ref('test').child('asdf')).to.be.an.object
+        expect(store.firebase.ref('test').child('asdf')).to.be.an('object')
       })
     })
 
@@ -201,7 +201,7 @@ describe('enhancer', () => {
     describe('promiseEvents', () => {
       it('starts promiseEvents', async () => {
         await store.firebase.promiseEvents(['test'])
-        expect(store.firebase.ref('test')).to.be.an.object
+        expect(store.firebase.ref('test')).to.be.an('object')
       })
     })
 
@@ -228,7 +228,7 @@ describe('enhancer', () => {
     describe('watchEvent', () => {
       it('starts watcher', async () => {
         await store.firebase.watchEvent('value', 'test')
-        expect(store.firebase.ref('test')).to.be.an.object
+        expect(store.firebase.ref('test')).to.be.an('object')
       })
     })
 
@@ -240,7 +240,7 @@ describe('enhancer', () => {
       try {
         store.firebase.login({ email: 'test' })
       } catch (err) {
-        expect(err).to.be.an.object
+        expect(err).to.be.an('object')
       }
     })
 
@@ -326,7 +326,7 @@ describe('enhancer', () => {
 
       it('is exported if it exists', () => {
         Firebase.storage = () => ({})
-        expect(store.firebase.storage()).to.be.an.object
+        expect(store.firebase.storage()).to.be.an('object')
         Firebase.storage = undefined
       })
     })
@@ -340,7 +340,7 @@ describe('enhancer', () => {
 
       it('is exported if it exists', () => {
         Firebase.messaging = () => ({})
-        expect(store.firebase.messaging()).to.be.an.object
+        expect(store.firebase.messaging()).to.be.an('object')
         Firebase.messaging = undefined
       })
     })
@@ -348,7 +348,7 @@ describe('enhancer', () => {
 
   describe('getFirebase', () => {
     it('exports firebase instance', () => {
-      expect(getFirebase()).to.be.an.object
+      expect(getFirebase()).to.be.an('object')
     })
   })
 })

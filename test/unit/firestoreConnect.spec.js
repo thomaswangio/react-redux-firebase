@@ -92,6 +92,6 @@ describe('firestoreConnect', () => {
 
 describe('createFirestoreConnect', () => {
   it('creates a function', () => {
-    expect(createFirestoreConnect('store2')).to.be.a.function
+    expect(createFirestoreConnect('store2')).to.be.an('function')
   })
 })
